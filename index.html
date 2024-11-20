@@ -1,0 +1,159 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>a personal portfolio page of a junior web developer named Jacob Parra.</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="shortcut icon"
+            class="favicon-tab"
+            type="image/png"
+            href="/favicon.ico"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <style>
+            html,
+            body {
+                width: 100vw;
+                height: 100vh;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                -webkit-font-smoothing: antialiased;
+            }
+
+            #root {
+                position: absolute;
+                width: 100vw;
+                height: 100vh;
+                top: 0;
+            }
+        </style>
+        <style>
+            #loading {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                background-color: white;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                flex-wrap: wrap;
+            }
+
+            #loading img {
+                width: 58px;
+                height: 58px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="loading"></div>
+        <div id="root"></div>
+        
+        <script>
+            var loading = document.getElementById('loading');
+            if (loading) {
+                loading.style.display = 'flex';
+                loading.style.zIndex = 100;
+                var queryParameters = new URLSearchParams(window.location.search);
+                var loadingUrl = window.loadingUrl || queryParameters.get('loadingUrl');
+                var loadingBg = window.loadingBg || queryParameters.get('loadingBg');
+
+                if (loadingUrl) {
+                    if (loadingUrl.endsWith('.json') && bodymovin) {
+                        var parentDiv = document.getElementById('loading');
+                        var childDiv = document.createElement('div');
+                        childDiv.id = 'lottie-container';
+                        parentDiv.appendChild(childDiv);
+
+                        var animation = bodymovin.loadAnimation({
+                            container: document.getElementById('lottie-container'),
+                            path: loadingUrl,
+                            renderer: 'svg',
+                        });
+                    } else if (
+                        loadingUrl.endsWith('.gif') ||
+                        loadingUrl.endsWith('.apng') ||
+                        loadingUrl.endsWith('.svg') ||
+                        loadingUrl.endsWith('.png')
+                    ) {
+                        loading.innerHTML = `
+                            <picture>
+                            <img src="${loadingUrl}" alt="loading" style="opacity: 1;">
+                            </picture>
+                        `;
+                    }
+                }
+                if (loadingBg) {
+                    loading.style.backgroundColor = loadingBg;
+                    loading.style.backgroundImage = loadingBg;
+                }
+
+                const hideLoading = () => (loading.style.display = 'none');
+
+                window.addEventListener('app_error', () => hideLoading());
+                window.addEventListener('app_mounted', () => hideLoading());
+            }
+        </script>
+        <div class="seo-content" style="opacity: 0; white-space: pre; display: none;"></div>
+            <p>As a junior web developer, I'm driven by a deep fascination with the ever-evolving world of web technologies. I've spent countless hours learning, experimenting</p>
+            <p>FAQs</p>
+            <p>Shell</p>
+            <p>Microsoft</p>
+            <p>Welcome to My </p>
+            <p>Frequently Asked </p>
+            <p>As a junior web developer, I have a strong foundation in HTML, CSS, and JavaScript, and I'm constantly expanding my knowledge by exploring the latest frameworks and </p>
+            <p>Check out the latest project from Jacob Parra</p>
+            <p>Hire Me</p>
+            <p>JavaScript</p>
+            <p>About</p>
+            <p>CSS</p>
+            <p>Google</p>
+            <p>Explore My Work</p>
+            <p>© 2024 Jacob Parra, Inc. All rights reserved.</p>
+            <p>About</p>
+            <p>Contact</p>
+            <p>How much do your </p>
+            <p>The cost of my services varies depending on the scope and complexity of the project</p>
+            <p>Work</p>
+            <p>I'm excited to learn more about your project and discuss how I can contribute my skills and expertise as a junior web developer</p>
+            <p>What services do you offer?</p>
+            <p>At the heart of my work as a junior web developer lies a deep commitment to understanding the needs and goals of my clients. I believe that effective communication and a collaborative approach are essential for delivering projects </p>
+            <p>I'm Jacob Parra, a junior web developer with a </p>
+            <p>Twitter</p>
+            <p>Frameworks</p>
+            <p>Contact Me</p>
+            <p>Home</p>
+            <p>My Journey</p>
+            <p>Apple</p>
+            <p>As a junior web developer, I specialize in creating responsive, user-friendly websites and web applications. My services include custom web design, front-end development, back-end integration</p>
+            <p>Partner Companies</p>
+            <p>FAQ</p>
+            <p>Let's Talk</p>
+            <p>HTML</p>
+            <p>Instagram</p>
+            <p>About Me</p>
+            <p>Contact</p>
+            <p>Quick Links</p>
+            <p>Inquire Now</p>
+            <p>Jacob Parra</p>
+            <p>Meet Jacob Parra, a rising star in the world of web </p>
+            <p>Work</p>
+            <p>LinkedIn</p>
+            <p>Hi, my name is Jacob Parra, and I'm a passionate junior web developer. I've been honing my skills in HTML, CSS, JavaScript</p>
+            <p>My Development Expertise</p>
+            <p>Home</p>
+            <p>Get in Touch</p>
+            <p>Connecting with Clients</p>
+            <p>Connect with Me</p>
+            <p>GitHub</p>
+        </div>
+    </body>
+</html>
